@@ -31,7 +31,7 @@ Document → Load → Split → Embeddings → Chroma DB → Query → Retrieve 
 1. Clone repo:
 
 ```bash
-git clone <repo-url>
+git clone "https://github.com/RishavKumarIIT/Document-Chatbot-Using-RAG-and-Chroma-Vector-Database"
 cd DocuGPT
 ```
 
@@ -46,7 +46,7 @@ venv\Scripts\activate     # Windows
 3. Install dependencies:
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 4. Add **Google GenAI API key** in `main.py`:
@@ -58,21 +58,21 @@ client = Client(api_key="YOUR_API_KEY")
 ## Running FastAPI
 
 ```bash
-uvicorn main:app --reload
+uvicorn server:app --reload
 ```
 
-Access Swagger UI: `http://127.0.0.1:8000/docs`
+Access Swagger UI: `http://127.0.0.1:8000/`
 
 ## Using APIs in Postman
 
 ### 1. Load Documents
 
-* **Endpoint:** `/load` | **Method:** POST
+* **Endpoint:** `/load` | **Method:** GET
 * **Body JSON:**
 
 ```json
 {
-  "path": "https://example.com/sample.pdf"
+  "path": "https://drive.google.com/uc?id=1EqfzunbmPLjvhghjkOy76CLUauvH2s_Fly"
 }
 ```
 
@@ -84,7 +84,7 @@ Access Swagger UI: `http://127.0.0.1:8000/docs`
 
 ### 2. Ask Query
 
-* **Endpoint:** `/ask` | **Method:** POST
+* **Endpoint:** `/ask` | **Method:** GET
 * **Body JSON:**
 
 ```json
