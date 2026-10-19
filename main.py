@@ -11,7 +11,7 @@ import shutil
 from urllib.parse import urlparse
 
 
-client = Client(api_key="AIzaSyDPk29Tp51F2d6u_tQL0xuw5eti8k88b5Y") 
+client = Client(api_key="") 
 
 
 def recreate_folder(path="./data"):
